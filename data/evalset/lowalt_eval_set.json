@@ -1,0 +1,2519 @@
+[
+ {
+  "user_input": "我需要在本地空域执行一次定点盘旋任务，600 秒内完成，飞行高度控制在 30–180 米之间。计划航点依次为 (150, 150, 100)、(350, 150, 100)、(350, 350, 100)、(150, 350, 100)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 40.711 米；电量余量比例 0.998 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 600.0 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=40.711",
+   "check_battery_reserve: reserve_fraction=0.998, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 40.711 米；电量余量比例 0.998 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 40.711,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9984,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-001",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Octocopter_Loiter_in_Volcanic_Zone_with_Lightning_Risk_46070b4c2878",
+   "scenario_name": "Octocopter Loiter in Volcanic Zone with Lightning Risk",
+   "mission_type": "loiter",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "Loiter",
+    "VolcanicZone",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次航点测绘任务，600 秒内完成，飞行高度控制在 10–150 米之间。计划航点依次为 (75, 75, 30)、(75, 325, 45)、(225, 325, 60)、(225, 75, 45)、(150, 150, 40)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 5.013 米；电量余量比例 0.996 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 757.831 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=5.013",
+   "check_battery_reserve: reserve_fraction=0.996, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 5.013 米；电量余量比例 0.996 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 5.013,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9962,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-002",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Offshore_Platform_VTOL_Survey_Mission_7de4f63c68a4",
+   "scenario_name": "Offshore Platform VTOL Survey Mission",
+   "mission_type": "waypoint_survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "WaypointSurvey",
+    "OffshorePlatform",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GNSSMultipath"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次设施巡检任务，600 秒内完成，飞行高度控制在 10–300 米之间。计划航点依次为 (100, 100, 50)、(200, 600, 80)、(800, 600, 120)、(800, 200, 60)、(100, 100, 50)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -1.392，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2223.768 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=100.002",
+   "check_battery_reserve: reserve_fraction=-1.392, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -1.392，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 100.002,
+   "battery_sufficient": false,
+   "reserve_fraction": -1.3916,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-003",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "VTOL_Transition_Test_at_Offshore_Platform_d61c848e109a",
+   "scenario_name": "VTOL Transition Test at Offshore Platform",
+   "mission_type": "inspection",
+   "risk_level": 2,
+   "risk_category": "Medium Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "Inspection",
+    "OffshorePlatform",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "MediumRisk"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次搜索救援任务，600 秒内完成，飞行高度控制在 10–300 米之间。计划航点依次为 (200, 150, 75)、(600, 200, 100)、(700, 600, 120)、(300, 700, 90)、(150, 400, 60)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -0.685，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1566.832 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=-0.685, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -0.685，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": false,
+   "reserve_fraction": -0.6851,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-004",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "Forest_Search_in_Volcanic_Zone_with_Helicopter_5b2f20206508",
+   "scenario_name": "Forest Search in Volcanic Zone with Helicopter",
+   "mission_type": "search_rescue",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "SearchRescue",
+    "VolcanicZone",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次桥梁巡检任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (30, 30, 30)、(170, 50, 30)、(170, 100, 30)、(30, 120, 30)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 14.648 米；电量余量比例 0.997 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 332.843 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=14.648",
+   "check_battery_reserve: reserve_fraction=0.997, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 14.648 米；电量余量比例 0.997 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 14.648,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9967,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-005",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Bridge_Inspection_under_Strong_Crosswind_at_Airport_Perimeter_4fd045c5a8b8",
+   "scenario_name": "Bridge Inspection under Strong Crosswind at Airport Perimeter",
+   "mission_type": "bridge_inspection",
+   "risk_level": 2,
+   "risk_category": "Medium Risk",
+   "faults": [],
+   "wind_mps": 8.5,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "BridgeInspection",
+    "AirportPerimeter",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "MediumRisk"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次区域测绘任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (50, 50, 40)、(120, 100, 60)、(200, 150, 50)、(250, 80, 70)、(180, 40, 50)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 354.57 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.999, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9985,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-006",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "thermal_updraft_training_forest_gusts_helicopter_dc0d11c24376",
+   "scenario_name": "thermal_updraft_training_forest_gusts_helicopter",
+   "mission_type": "survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "Survey",
+    "Forest",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次走廊跟随任务，600 秒内完成，飞行高度控制在 20–120 米之间。计划航点依次为 (150, 150, 50)、(400, 200, 50)、(600, 300, 50)、(800, 400, 50)、(900, 600, 50)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 54.166 米；电量余量比例 0.995 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 925.771 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=54.166",
+   "check_battery_reserve: reserve_fraction=0.995, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 54.166 米；电量余量比例 0.995 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 54.166,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9947,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-007",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Desert_Corridor_Follow_Hexacopter_89530d0f1faf",
+   "scenario_name": "Desert Corridor Follow - Hexacopter",
+   "mission_type": "corridor_follow",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "CorridorFollow",
+    "Desert",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Dust",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次固定翼区域侦察任务，600 秒内完成，飞行高度控制在 10–200 米之间。计划航点依次为 (200, 200, 50)、(800, 200, 80)、(800, 600, 100)、(200, 600, 80)、(200, 200, 50)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 60.001 米；电量余量比例 0.987 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2002.706 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=60.001",
+   "check_battery_reserve: reserve_fraction=0.987, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 60.001 米；电量余量比例 0.987 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 60.001,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.987,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-008",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "urban_canyon_vtol_recon_0bde3b677d7b",
+   "scenario_name": "urban_canyon_vtol_recon",
+   "mission_type": "area_recon_fixedwing",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "AreaReconFixedwing",
+    "UrbanCanyon",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次重载配送任务，600 秒内完成，飞行高度控制在 10–150 米之间。计划航点依次为 (100, 100, 30)、(300, 200, 50)、(600, 400, 80)、(850, 700, 40)、(900, 700, 30)。请核查后给出执行方案。",
+  "reference": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1029.846 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.975, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9747,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-009",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Offshore_Heavy_Load_Delivery_in_Icing_Conditions_cc9357a470a9",
+   "scenario_name": "Offshore Heavy Load Delivery in Icing Conditions",
+   "mission_type": "heavy_load_delivery",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "HeavyLoadDelivery",
+    "OffshorePlatform",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GPSJamming",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次边境巡逻任务，600 秒内完成，飞行高度控制在 60–200 米之间。计划航点依次为 (100, 100, 120)、(700, 100, 120)、(700, 500, 120)、(100, 500, 120)、(100, 100, 120)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 150.0 米；电量余量比例 0.979 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2000.0 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=150.0",
+   "check_battery_reserve: reserve_fraction=0.979, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 150.0 米；电量余量比例 0.979 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 150.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9789,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-010",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "border_patrol_fixed_wing_urban_crosswind_273ac12324b0",
+   "scenario_name": "border_patrol_fixed_wing_urban_crosswind",
+   "mission_type": "border_patrol",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "BorderPatrol",
+    "DenseUrban",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次跑道触地复飞训练任务，600 秒内完成，飞行高度控制在 5–120 米之间。计划航点依次为 (30, 75, 15)、(80, 75, 25)、(150, 75, 15)、(180, 75, 10)。请核查后给出执行方案。",
+  "reference": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 152.115 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.999, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9991,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-011",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "jungle_swarm_touch_and_go_ce6486937076581d_c84c88782ef1",
+   "scenario_name": "jungle_swarm_touch_and_go_ce6486937076581d",
+   "mission_type": "runway_touch_and_go",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "motor_failure"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "RunwayTouchAndGo",
+    "Jungle",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次建筑外立面巡检任务，600 秒内完成，飞行高度控制在 5–120 米之间。计划航点依次为 (20, 20, 25)、(20, 130, 25)、(180, 130, 50)、(180, 20, 25)、(100, 75, 40)。请核查后给出执行方案。",
+  "reference": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 482.981 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.996, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9964,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-012",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Desert_Facade_Inspection_Hexacopter_Mission_dc8c3bcb1316",
+   "scenario_name": "Desert Facade Inspection Hexacopter Mission",
+   "mission_type": "facade_inspection",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "FacadeInspection",
+    "Desert",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "LowVisibility"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次区域测绘任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (40, 40, 30)、(160, 40, 45)、(160, 110, 60)、(40, 110, 45)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 0.001 米；电量余量比例 0.996 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 313.457 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=0.001",
+   "check_battery_reserve: reserve_fraction=0.996, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 0.001 米；电量余量比例 0.996 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.001,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9959,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-013",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "battery_emergency_forced_landing_urban_canyon_solar_wing_3e8c94189862",
+   "scenario_name": "battery_emergency_forced_landing_urban_canyon_solar_wing",
+   "mission_type": "survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "Survey",
+    "UrbanCanyon",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次区域测绘任务，600 秒内完成，飞行高度控制在 10–500 米之间。计划航点依次为 (1000, 1000, 150)、(1500, 2000, 150)、(2000, 3000, 150)、(3000, 2500, 150)、(3500, 1500, 150)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -0.786，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 4472.136 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['DNFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=-0.786, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -0.786，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "DNFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": false,
+   "reserve_fraction": -0.7857,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-014",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "Desert_Loiter_with_Helicopter_74140c28b4c7",
+   "scenario_name": "Desert Loiter with Helicopter",
+   "mission_type": "survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "motor_failure"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "Survey",
+    "Desert",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次卫星链路中继任务，600 秒内完成，飞行高度控制在 40–450 米之间。计划航点依次为 (500, 400, 150)、(900, 700, 180)、(1300, 1000, 160)、(700, 1300, 140)、(400, 800, 170)。请核查后给出执行方案。",
+  "reference": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2256.284 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.933, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.933,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-015",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "SolarWing_VolcanicRelay_Mission_74fa6065fde9",
+   "scenario_name": "SolarWing_VolcanicRelay_Mission",
+   "mission_type": "satellite_link_relay",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "lightning_risk"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "SatelliteLinkRelay",
+    "VolcanicZone",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次重载配送任务，600 秒内完成，飞行高度控制在 5–120 米之间。计划航点依次为 (480, 300, 10)、(400, 400, 50)、(100, 500, 40)、(50, 50, 10)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 102.304 米；电量余量比例 0.994 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 904.312 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=102.304",
+   "check_battery_reserve: reserve_fraction=0.994, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 102.304 米；电量余量比例 0.994 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 102.304,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9936,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-016",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Heavy_Load_Delivery_in_Wind_Farm_84e7f5c6df8c",
+   "scenario_name": "Heavy Load Delivery in Wind Farm",
+   "mission_type": "heavy_load_delivery",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "HeavyLoadDelivery",
+    "WindFarm",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次建图任务，600 秒内完成，飞行高度控制在 50–300 米之间。计划航点依次为 (200, 200, 150)、(800, 200, 200)、(800, 600, 180)、(200, 600, 160)、(200, 200, 150)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 0.148，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2003.038 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.148, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 0.148，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": false,
+   "reserve_fraction": 0.1483,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-017",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "Urban_Canyon_GNSS_Challenge_at_Industrial_Plant_2536033083ac",
+   "scenario_name": "Urban Canyon GNSS Challenge at Industrial Plant",
+   "mission_type": "mapping",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "imu_bias"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "Mapping",
+    "IndustrialPlant",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次护航任务，600 秒内完成，飞行高度控制在 10–250 米之间。计划航点依次为 (20, 75, 20)、(80, 75, 30)、(140, 75, 40)、(180, 75, 30)。请核查后给出执行方案。",
+  "reference": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 162.886 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.998, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9977,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-018",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Gliding_Escort_Over_Snowy_Bridge_4f6fe5b9a83f",
+   "scenario_name": "Gliding Escort Over Snowy Bridge",
+   "mission_type": "escort",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 7.5,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "Escort",
+    "BridgeSite",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次定点盘旋任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (50, 50, 40)、(80, 100, 60)、(120, 80, 50)、(100, 140, 70)。请核查后给出执行方案。",
+  "reference": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 173.802 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.998, threshold=0.20, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 2 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9977,
+   "reserve_threshold": 0.2,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-019",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Quadrotor_Loiter_at_Airport_Perimeter_with_Thermal_Updrafts_3be534e5bc2d",
+   "scenario_name": "Quadrotor Loiter at Airport Perimeter with Thermal Updrafts",
+   "mission_type": "loiter",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6.0,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "Loiter",
+    "AirportPerimeter",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次灾情侦察任务，600 秒内完成，飞行高度控制在 1–50 米之间。计划航点依次为 (50, 50, 10)、(150, 150, 15)、(250, 350, 20)、(350, 450, 12)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 506.82 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.995, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9948,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-020",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "underground_mine_glider_recon_c4842e223fc2f338_710caee6e2c2",
+   "scenario_name": "underground_mine_glider_recon_c4842e223fc2f338",
+   "mission_type": "disaster_recon",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 3.0,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "DisasterRecon",
+    "UndergroundMine",
+    "SingleUAV",
+    "GeofencedArea",
+    "Breezy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次灭火投放任务，600 秒内完成，飞行高度控制在 5–120 米之间。计划航点依次为 (100, 100, 30)、(300, 200, 40)、(500, 250, 50)、(700, 300, 45)、(600, 500, 35)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 860.274 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.994, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9936,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-021",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Desert_Firefighting_Drop_with_Octocopter_3a62f1ab277f",
+   "scenario_name": "Desert Firefighting Drop with Octocopter",
+   "mission_type": "firefighting_drop",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "motor_failure"
+   ],
+   "wind_mps": 9.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "FirefightingDrop",
+    "Desert",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次灾情侦察任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (100, 100, 15)、(500, 300, 30)、(1000, 600, 60)、(1500, 900, 90)、(1800, 1200, 40)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 107.249 米；电量余量比例 0.979 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 2042.398 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=107.249",
+   "check_battery_reserve: reserve_fraction=0.979, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 107.249 米；电量余量比例 0.979 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 107.249,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9793,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-022",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Coastal_Storm_Recon_with_VTOL_Tiltrotor_3320d4674467",
+   "scenario_name": "Coastal Storm Recon with VTOL Tiltrotor",
+   "mission_type": "disaster_recon",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "DisasterRecon",
+    "Coastal",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GNSSMultipath"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次物资配送任务，600 秒内完成，飞行高度控制在 30–450 米之间。计划航点依次为 (100, 100, 50)、(300, 400, 150)、(600, 200, 100)、(900, 700, 50)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -0.423，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1323.406 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=5.472",
+   "check_battery_reserve: reserve_fraction=-0.423, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -0.423，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 5.472,
+   "battery_sufficient": false,
+   "reserve_fraction": -0.4233,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-023",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "Arctic_Heavy_Lift_Helicopter_Delivery_33cc2bc2c008",
+   "scenario_name": "Arctic Heavy Lift Helicopter Delivery",
+   "mission_type": "delivery",
+   "risk_level": 2,
+   "risk_category": "Medium Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "Delivery",
+    "Arctic",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "MediumRisk"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次塔架螺旋巡检任务，600 秒内完成，飞行高度控制在 5–120 米之间。计划航点依次为 (45, 45, 20)、(45, 45, 40)、(45, 45, 60)、(45, 45, 80)、(45, 45, 100)。请核查后给出执行方案。",
+  "reference": "航点 1、2、3、4 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 80.0 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.999, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 1、2、3、4 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9992,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-024",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Offshore_Tower_Spiral_Inspection_in_Hail_15910cf48288",
+   "scenario_name": "Offshore Tower Spiral Inspection in Hail",
+   "mission_type": "tower_spiral_inspection",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "TowerSpiralInspection",
+    "OffshorePlatform",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次设施巡检任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (20, 20, 30)、(60, 80, 45)、(120, 100, 50)、(90, 160, 40)、(30, 140, 35)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 268.364 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.997, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9968,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-025",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Wind_Turbine_Blade_Inspection_in_Dense_Urban_Hail_d89b561d0564",
+   "scenario_name": "Wind Turbine Blade Inspection in Dense Urban Hail",
+   "mission_type": "inspection",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "Inspection",
+    "DenseUrban",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "LowVisibility"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次搜索救援任务，600 秒内完成，飞行高度控制在 10–250 米之间。计划航点依次为 (150, 100, 30)、(400, 200, 50)、(700, 350, 70)、(850, 600, 40)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 899.093 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.990, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9903,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-026",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Disaster_Recon_in_Jungle_with_VTOL_Tiltrotor_2d0ae5ede38e",
+   "scenario_name": "Disaster Recon in Jungle with VTOL Tiltrotor",
+   "mission_type": "search_rescue",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 7.5,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "SearchRescue",
+    "Jungle",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次固定翼区域侦察任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (50, 50, 25)、(250, 50, 30)、(250, 200, 35)、(50, 200, 30)、(150, 125, 40)。请核查后给出执行方案。",
+  "reference": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 675.608 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.994, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9935,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-027",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Jungle_Recon_with_Octocopter_fcf1a205183d",
+   "scenario_name": "Jungle Recon with Octocopter",
+   "mission_type": "area_recon_fixedwing",
+   "risk_level": 2,
+   "risk_category": "Medium Risk",
+   "faults": [],
+   "wind_mps": 6.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "AreaReconFixedwing",
+    "Jungle",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "Gusts",
+    "MediumRisk"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次管线巡检任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (100, 100, 30)、(300, 150, 40)、(500, 200, 35)、(700, 500, 50)、(150, 550, 45)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1325.771 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.988, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9879,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-028",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Coastal_Pipeline_Inspection_with_Hexacopter_in_Fog_ad2188b02c1a",
+   "scenario_name": "Coastal Pipeline Inspection with Hexacopter in Fog",
+   "mission_type": "pipeline_inspection",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "PipelineInspection",
+    "Coastal",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "Gusts",
+    "LowVisibility"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次跑道触地复飞训练任务，600 秒内完成，飞行高度控制在 10–300 米之间。计划航点依次为 (100, 700, 10)、(100, 400, 50)、(100, 100, 10)、(100, 400, 50)、(100, 700, 10)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -0.302，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1210.62 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=350.001",
+   "check_battery_reserve: reserve_fraction=-0.302, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -0.302，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 350.001,
+   "battery_sufficient": false,
+   "reserve_fraction": -0.302,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-029",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "Desert_Helicopter_Touch_and_Go_in_Cold_Extremes_f97eb41ee274",
+   "scenario_name": "Desert Helicopter Touch-and-Go in Cold Extremes",
+   "mission_type": "runway_touch_and_go",
+   "risk_level": 2,
+   "risk_category": "Medium Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "RunwayTouchAndGo",
+    "Desert",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Gusts",
+    "MediumRisk"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次通信中继任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (40, 50, 40)、(160, 100, 60)、(140, 240, 50)、(60, 220, 55)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 355.917 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.994, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9939,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-030",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Satellite_Link_Relay_Hexacopter_Forest_LowVisibility_2c95340b7e53",
+   "scenario_name": "Satellite_Link_Relay_Hexacopter_Forest_LowVisibility",
+   "mission_type": "relay",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6.5,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "Relay",
+    "Forest",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GNSSMultipath"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次区域测绘任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (50, 50, 30)、(250, 50, 40)、(250, 150, 35)、(50, 150, 40)、(150, 100, 30)。请核查后给出执行方案。",
+  "reference": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 612.687 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.995, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9945,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-031",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "urban_canyon_gnss_challenge_swarm_1c3864eecce7",
+   "scenario_name": "urban_canyon_gnss_challenge_swarm",
+   "mission_type": "survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "icing_event"
+   ],
+   "wind_mps": 8.5,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "Survey",
+    "Rural",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次物资配送任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (10, 10, 15)、(60, 40, 25)、(110, 70, 20)、(160, 100, 30)、(190, 140, 15)。请核查后给出执行方案。",
+  "reference": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 229.047 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.997, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.997,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-032",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "ship_deck_delivery_swarm_forest_clear_5ec09b1576d4",
+   "scenario_name": "ship_deck_delivery_swarm_forest_clear",
+   "mission_type": "delivery",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 4.0,
+   "visibility": "excellent",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "Delivery",
+    "Forest",
+    "SingleUAV",
+    "GeofencedArea",
+    "Breezy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次灭火投放任务，600 秒内完成，飞行高度控制在 10–300 米之间。计划航点依次为 (150, 150, 60)、(600, 200, 80)、(650, 500, 100)、(200, 550, 70)、(120, 120, 50)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -1.168，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1649.603 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=-1.168, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -1.168，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": false,
+   "reserve_fraction": -1.1684,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-033",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "firefighting_drop_sandstorm_dense_urban_756e1d05d9fc",
+   "scenario_name": "firefighting_drop_sandstorm_dense_urban",
+   "mission_type": "firefighting_drop",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "gnss_jam",
+    "motor_failure"
+   ],
+   "wind_mps": 12.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "FirefightingDrop",
+    "DenseUrban",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次航点测绘任务，600 秒内完成，飞行高度控制在 10–300 米之间。计划航点依次为 (200, 200, 100)、(800, 200, 100)、(800, 600, 100)、(200, 600, 100)、(500, 400, 150)。请核查后给出执行方案。",
+  "reference": "按计划航线估算剩余电量比例仅 -1.323，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1964.005 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=-1.323, threshold=0.30, sufficient=False"
+  ],
+  "expected": {
+   "decision": "abort",
+   "acceptable_decisions": [
+    "abort",
+    "reroute"
+   ],
+   "rationale": "按计划航线估算剩余电量比例仅 -1.323，低于返航保留阈值 0.30，应中止任务并返航或就近备降。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": false,
+   "reserve_fraction": -1.3235,
+   "reserve_threshold": 0.3,
+   "group": "battery_low"
+  },
+  "metadata": {
+   "item_id": "LOWALT-034",
+   "group": "battery_low",
+   "source": "UAVBench",
+   "scenario_id": "offshore_helicopter_survey_dust_0c5548f472d1",
+   "scenario_name": "offshore_helicopter_survey_dust",
+   "mission_type": "waypoint_survey",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "poor",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": false,
+   "difficulty": "hard",
+   "tags": [
+    "WaypointSurvey",
+    "OffshorePlatform",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "Dust",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次走廊跟随任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (30, 20, 20)、(60, 40, 25)、(90, 60, 30)、(120, 80, 35)、(150, 100, 40)、(180, 120, 45)。请核查后给出执行方案。",
+  "reference": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 182.003 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.998, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 3 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9982,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-035",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Swarm_Drone_Corridor_Follow_in_Dense_Urban_Fog_d3b9589bb844",
+   "scenario_name": "Swarm Drone Corridor Follow in Dense Urban Fog",
+   "mission_type": "corridor_follow",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 6.0,
+   "visibility": "poor",
+   "n_waypoints": 6,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "CorridorFollow",
+    "DenseUrban",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次车队护航任务，600 秒内完成，飞行高度控制在 1–15 米之间。计划航点依次为 (10, 10, 5)、(25, 35, 5)、(50, 60, 5)、(80, 65, 5)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 4.148 米；电量余量比例 1.000 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 94.924 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=4.148",
+   "check_battery_reserve: reserve_fraction=1.000, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 4.148 米；电量余量比例 1.000 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 4.148,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9995,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-036",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Heavy_Lift_Convoy_Escort_in_Underground_Mine_e481c9ed2d3a",
+   "scenario_name": "Heavy Lift Convoy Escort in Underground Mine",
+   "mission_type": "convoy_escort",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 2.0,
+   "visibility": "poor",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "ConvoyEscort",
+    "UndergroundMine",
+    "SingleUAV",
+    "GeofencedArea",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming",
+    "Gusts"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次搜索救援任务，600 秒内完成，飞行高度控制在 10–150 米之间。计划航点依次为 (30, 30, 40)、(30, 120, 60)、(170, 120, 80)、(170, 30, 50)、(100, 75, 35)。请核查后给出执行方案。",
+  "reference": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 413.043 米",
+   "check_no_fly_zone: nfz_hit=True, kind=waypoint, zones=['NFZ-00'], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.993, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航点 5 落入禁飞区 NFZ-00，不得按原计划执行，需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "nfz_zone_ids": [
+    "NFZ-00"
+   ],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9925,
+   "reserve_threshold": 0.3,
+   "group": "nfz_waypoint"
+  },
+  "metadata": {
+   "item_id": "LOWALT-037",
+   "group": "nfz_waypoint",
+   "source": "UAVBench",
+   "scenario_id": "Search_and_Rescue_Glider_Mission_at_Bridge_Site_fe961a5dc3b4",
+   "scenario_name": "Search and Rescue Glider Mission at Bridge Site",
+   "mission_type": "search_rescue",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "waypoint",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "SearchRescue",
+    "BridgeSite",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次建图任务，600 秒内完成，飞行高度控制在 50–400 米之间。计划航点依次为 (200, 150, 150)、(800, 200, 180)、(750, 600, 200)、(300, 700, 170)、(150, 400, 160)。请核查后给出执行方案。",
+  "reference": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 1803.947 米",
+   "check_no_fly_zone: nfz_hit=True, kind=segment, zones=[], min_clearance_m=0.0",
+   "check_battery_reserve: reserve_fraction=0.988, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "reroute",
+   "acceptable_decisions": [
+    "reroute",
+    "abort"
+   ],
+   "rationale": "航线在相邻航点之间穿越禁飞区（端点未命中但段内穿过），需改航绕飞。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [
+    "proceed"
+   ],
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 0.0,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9878,
+   "reserve_threshold": 0.3,
+   "group": "nfz_segment"
+  },
+  "metadata": {
+   "item_id": "LOWALT-038",
+   "group": "nfz_segment",
+   "source": "UAVBench",
+   "scenario_id": "Mountainous_Solar_Mapping_with_Microburst_Risk_11ea6727c1a0",
+   "scenario_name": "Mountainous Solar Mapping with Microburst Risk",
+   "mission_type": "mapping",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "lost_link",
+    "gnss_jam"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": true,
+   "nfz_hit_kind": "segment",
+   "battery_sufficient": true,
+   "difficulty": "hard",
+   "tags": [
+    "Mapping",
+    "Mountainous",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "CommsLoss",
+    "GNSSMultipath"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次灭火投放任务，600 秒内完成，飞行高度控制在 10–250 米之间。计划航点依次为 (150, 150, 20)、(250, 350, 30)、(400, 400, 25)、(450, 150, 20)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 23.246 米；电量余量比例 0.997 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 637.023 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=23.246",
+   "check_battery_reserve: reserve_fraction=0.997, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 23.246 米；电量余量比例 0.997 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 23.246,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9966,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-039",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Urban_Firefighting_Drop_with_VTOL_Tiltrotor_deff9ece75d9",
+   "scenario_name": "Urban Firefighting Drop with VTOL Tiltrotor",
+   "mission_type": "firefighting_drop",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [
+    "icing_event"
+   ],
+   "wind_mps": 8.0,
+   "visibility": "good",
+   "n_waypoints": 4,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "easy",
+   "tags": [
+    "FirefightingDrop",
+    "UrbanCanyon",
+    "SingleUAV",
+    "GeofencedArea",
+    "HazardousWeather",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ },
+ {
+  "user_input": "我需要在本地空域执行一次搜索救援任务，600 秒内完成，飞行高度控制在 10–120 米之间。计划航点依次为 (50, 30, 30)、(150, 60, 40)、(250, 100, 50)、(350, 150, 40)、(300, 50, 35)。请核查后给出执行方案。",
+  "reference": "航点均未命中禁飞区，最小斜距 15.857 米；电量余量比例 0.953 满足阈值 0.30，可按计划执行。",
+  "reference_contexts": [
+   "calculate_waypoint_distance: 航点折线总长 437.212 米",
+   "check_no_fly_zone: nfz_hit=False, kind=none, zones=[], min_clearance_m=15.857",
+   "check_battery_reserve: reserve_fraction=0.953, threshold=0.30, sufficient=True"
+  ],
+  "expected": {
+   "decision": "proceed",
+   "acceptable_decisions": [
+    "proceed"
+   ],
+   "rationale": "航点均未命中禁飞区，最小斜距 15.857 米；电量余量比例 0.953 满足阈值 0.30，可按计划执行。",
+   "must_call_tools": [
+    "calculate_waypoint_distance",
+    "check_no_fly_zone",
+    "check_route_clearance",
+    "check_battery_reserve"
+   ],
+   "forbidden_decisions": [],
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "nfz_zone_ids": [],
+   "nfz_min_clearance_m": 15.857,
+   "battery_sufficient": true,
+   "reserve_fraction": 0.9534,
+   "reserve_threshold": 0.3,
+   "group": "no_conflict"
+  },
+  "metadata": {
+   "item_id": "LOWALT-040",
+   "group": "no_conflict",
+   "source": "UAVBench",
+   "scenario_id": "Urban_Canyon_Border_Patrol_with_Thermal_Updrafts_58815cd418b2",
+   "scenario_name": "Urban Canyon Border Patrol with Thermal Updrafts",
+   "mission_type": "search_rescue",
+   "risk_level": 3,
+   "risk_category": "High Risk",
+   "faults": [],
+   "wind_mps": 6.5,
+   "visibility": "good",
+   "n_waypoints": 5,
+   "nfz_hit": false,
+   "nfz_hit_kind": "none",
+   "battery_sufficient": true,
+   "difficulty": "medium",
+   "tags": [
+    "SearchRescue",
+    "UrbanCanyon",
+    "SingleUAV",
+    "GeofencedArea",
+    "Windy",
+    "AltitudeBounded",
+    "GNSSMultipath",
+    "GPSJamming"
+   ]
+  }
+ }
+]

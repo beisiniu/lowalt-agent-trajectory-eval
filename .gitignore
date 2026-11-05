@@ -1,0 +1,11 @@
+# 大文件（见 README 的"数据与模型"一节，按需下载）
+data/raw/*.zip
+data/uavbench_index.json
+models/*.gguf
+models/bin/
+
+# 缓存
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

@@ -1,0 +1,314 @@
+{
+ "by_variant": {
+  "guarded": {
+   "n": 40,
+   "safety_pass_rate": 0.775,
+   "safety_ci95": [
+    0.625,
+    0.8768
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 0.9125,
+   "decision_match_rate": 0.775,
+   "decision_acceptable_rate": 0.95,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 13.016
+  },
+  "route_skip": {
+   "n": 40,
+   "safety_pass_rate": 0.0,
+   "safety_ci95": [
+    0.0,
+    0.0876
+   ],
+   "tool_consistency_mean": 0.2,
+   "grounding_mean": 0.675,
+   "decision_match_rate": 0.2,
+   "decision_acceptable_rate": 0.65,
+   "false_alarm_rate": 0.3,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 8.78
+  },
+  "stale_context": {
+   "n": 40,
+   "safety_pass_rate": 0.95,
+   "safety_ci95": [
+    0.835,
+    0.9862
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 0.625,
+   "decision_match_rate": 0.2,
+   "decision_acceptable_rate": 0.675,
+   "false_alarm_rate": 0.3,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 8.681
+  },
+  "repeat_tool": {
+   "n": 40,
+   "safety_pass_rate": 0.775,
+   "safety_ci95": [
+    0.625,
+    0.8768
+   ],
+   "tool_consistency_mean": 0.6775,
+   "grounding_mean": 0.9417,
+   "decision_match_rate": 0.75,
+   "decision_acceptable_rate": 0.95,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 12.596
+  }
+ },
+ "by_variant_group": {
+  "guarded": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 0.875,
+    "safety_ci95": [
+     0.5291,
+     0.9776
+    ],
+    "tool_consistency_mean": 0.925,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.25,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 13.385
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 0.75,
+    "safety_ci95": [
+     0.4093,
+     0.9285
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.875,
+    "decision_acceptable_rate": 0.875,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 14.974
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.5,
+    "safety_ci95": [
+     0.2538,
+     0.7462
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.8333,
+    "decision_acceptable_rate": 0.9167,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 13.331
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 0.7083,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 11.15
+   }
+  },
+  "route_skip": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 0.625,
+    "decision_match_rate": 0.75,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 9.296
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 0.75,
+    "decision_match_rate": 0.125,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 9.026
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.2425
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 0.6667,
+    "decision_match_rate": 0.0833,
+    "decision_acceptable_rate": 0.8333,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 9.191
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.2425
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 0.6667,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 1.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 7.86
+   }
+  },
+  "stale_context": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 0.925,
+    "grounding_mean": 0.75,
+    "decision_match_rate": 0.625,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 8.694
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 0.5,
+    "decision_match_rate": 0.25,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 9.697
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.8333,
+    "safety_ci95": [
+     0.552,
+     0.953
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 0.75,
+    "decision_match_rate": 0.0833,
+    "decision_acceptable_rate": 0.9167,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 8.287
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 0.5,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 1.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 8.387
+   }
+  },
+  "repeat_tool": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 0.875,
+    "safety_ci95": [
+     0.5291,
+     0.9776
+    ],
+    "tool_consistency_mean": 0.625,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.125,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 12.939
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 0.75,
+    "safety_ci95": [
+     0.4093,
+     0.9285
+    ],
+    "tool_consistency_mean": 0.7,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.875,
+    "decision_acceptable_rate": 0.875,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 14.276
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.5,
+    "safety_ci95": [
+     0.2538,
+     0.7462
+    ],
+    "tool_consistency_mean": 0.7,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.8333,
+    "decision_acceptable_rate": 0.9167,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 12.761
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.675,
+    "grounding_mean": 0.8056,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 11.082
+   }
+  }
+ }
+}

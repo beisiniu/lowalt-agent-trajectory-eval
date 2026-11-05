@@ -1,0 +1,8 @@
+[
+  {
+    "user_input": "示例任务描述",
+    "expected_tools": ["tool1", "tool2"],
+    "reference": "预期结果（可选）"
+  }
+]
+

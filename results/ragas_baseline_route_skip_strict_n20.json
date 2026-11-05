@@ -1,0 +1,184 @@
+{
+ "summary": {
+  "variant": "route_skip",
+  "mode": "strict",
+  "n": 20,
+  "n_fallback": 0,
+  "metrics": [
+   "faithfulness"
+  ],
+  "metrics_requested": [
+   "faithfulness"
+  ],
+  "overall": {
+   "n": 20,
+   "faithfulness": 0.2975
+  },
+  "by_group": {
+   "battery_low": {
+    "n": 4,
+    "faithfulness": 0.25
+   },
+   "nfz_segment": {
+    "n": 2,
+    "faithfulness": 0.1
+   },
+   "nfz_waypoint": {
+    "n": 6,
+    "faithfulness": 0.4583
+   },
+   "no_conflict": {
+    "n": 8,
+    "faithfulness": 0.25
+   }
+  },
+  "config": {
+   "llm_base": "http://127.0.0.1:8081/v1",
+   "model": "",
+   "embed_base": "",
+   "runs": "D:\\开源项目\\lowalt-agent-eval\\results\\trajectory_runs_llm.json"
+  }
+ },
+ "per_item": [
+  {
+   "item_id": "LOWALT-001",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 1.0
+  },
+  {
+   "item_id": "LOWALT-002",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-003",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-004",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 1.0
+  },
+  {
+   "item_id": "LOWALT-005",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-006",
+   "variant": "route_skip",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "faithfulness": 0.2
+  },
+  {
+   "item_id": "LOWALT-007",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-008",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 1.0
+  },
+  {
+   "item_id": "LOWALT-009",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-010",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-011",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 1.0
+  },
+  {
+   "item_id": "LOWALT-012",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.75
+  },
+  {
+   "item_id": "LOWALT-013",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-014",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-015",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.5
+  },
+  {
+   "item_id": "LOWALT-016",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-017",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-018",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-019",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.5
+  },
+  {
+   "item_id": "LOWALT-020",
+   "variant": "route_skip",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  }
+ ]
+}

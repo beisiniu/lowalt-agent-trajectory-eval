@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Evaluator Configuration",
+  "description": "配置文件的JSON Schema，提供IDE自动补全和校验",
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": ["dify", "bisheng", "n8n", "coze", "langchain", "langgraph"],
+      "description": "目标平台"
+    },
+    "api_config": {
+      "type": "object",
+      "description": "平台API配置"
+    },
+    "dataset": {
+      "type": "string",
+      "description": "测试数据集路径"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "评估指标列表"
+    },
+    "evaluator_llm": {
+      "type": "object",
+      "description": "评估用的LLM配置"
+    },
+    "output": {
+      "type": "object",
+      "description": "输出配置"
+    }
+  },
+  "required": ["platform", "dataset", "metrics"]
+}
+

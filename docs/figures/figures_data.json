@@ -1,0 +1,52 @@
+{
+ "guarded": {
+  "n_episodes": 40,
+  "n_reroute": 23,
+  "breakdown": {
+   "noop": 15,
+   "reroute_ok": 5,
+   "reroute_into_nfz": 3
+  },
+  "by_group": {
+   "battery_low": {
+    "noop": 6
+   },
+   "nfz_segment": {
+    "noop": 6,
+    "reroute_into_nfz": 1
+   },
+   "nfz_waypoint": {
+    "reroute_ok": 5,
+    "noop": 3,
+    "reroute_into_nfz": 2
+   }
+  },
+  "noop_rate_among_reroute": 0.6522,
+  "true_success_rate_among_reroute": 0.2174
+ },
+ "repeat_tool": {
+  "n_episodes": 40,
+  "n_reroute": 24,
+  "breakdown": {
+   "noop": 16,
+   "reroute_ok": 5,
+   "reroute_into_nfz": 3
+  },
+  "by_group": {
+   "battery_low": {
+    "noop": 7
+   },
+   "nfz_segment": {
+    "noop": 6,
+    "reroute_into_nfz": 1
+   },
+   "nfz_waypoint": {
+    "reroute_ok": 5,
+    "noop": 3,
+    "reroute_into_nfz": 2
+   }
+  },
+  "noop_rate_among_reroute": 0.6667,
+  "true_success_rate_among_reroute": 0.2083
+ }
+}

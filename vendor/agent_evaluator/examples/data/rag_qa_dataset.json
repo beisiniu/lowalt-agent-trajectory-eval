@@ -1,0 +1,8 @@
+[
+  {
+    "user_input": "示例问题",
+    "reference": "参考答案（可选）",
+    "retrieved_contexts": ["上下文1", "上下文2"]
+  }
+]
+

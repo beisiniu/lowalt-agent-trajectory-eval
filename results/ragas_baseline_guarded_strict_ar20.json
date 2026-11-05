@@ -1,0 +1,184 @@
+{
+ "summary": {
+  "variant": "guarded",
+  "mode": "strict",
+  "n": 20,
+  "n_fallback": 0,
+  "metrics": [
+   "answer_relevancy"
+  ],
+  "metrics_requested": [
+   "answer_relevancy"
+  ],
+  "overall": {
+   "n": 20,
+   "answer_relevancy": 0.4626
+  },
+  "by_group": {
+   "battery_low": {
+    "n": 4,
+    "answer_relevancy": 0.2994
+   },
+   "nfz_segment": {
+    "n": 2,
+    "answer_relevancy": 0.5148
+   },
+   "nfz_waypoint": {
+    "n": 6,
+    "answer_relevancy": 0.5202
+   },
+   "no_conflict": {
+    "n": 8,
+    "answer_relevancy": 0.5147
+   }
+  },
+  "config": {
+   "llm_base": "http://127.0.0.1:8081/v1",
+   "model": "",
+   "embed_base": "http://127.0.0.1:8082/v1",
+   "runs": "D:\\开源项目\\lowalt-agent-eval\\results\\trajectory_runs_llm.json"
+  }
+ },
+ "per_item": [
+  {
+   "item_id": "LOWALT-001",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.3777264532870512
+  },
+  {
+   "item_id": "LOWALT-002",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": null
+  },
+  {
+   "item_id": "LOWALT-003",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.3642639425567545
+  },
+  {
+   "item_id": "LOWALT-004",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-005",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": null
+  },
+  {
+   "item_id": "LOWALT-006",
+   "variant": "guarded",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "answer_relevancy": 0.42695081398946505
+  },
+  {
+   "item_id": "LOWALT-007",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.5698261577384046
+  },
+  {
+   "item_id": "LOWALT-008",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.49172964163260907
+  },
+  {
+   "item_id": "LOWALT-009",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.4859529349226121
+  },
+  {
+   "item_id": "LOWALT-010",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.5451139659405976
+  },
+  {
+   "item_id": "LOWALT-011",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.49417733466576635
+  },
+  {
+   "item_id": "LOWALT-012",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.5731477907548116
+  },
+  {
+   "item_id": "LOWALT-013",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": null
+  },
+  {
+   "item_id": "LOWALT-014",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.44455461331001916
+  },
+  {
+   "item_id": "LOWALT-015",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": null
+  },
+  {
+   "item_id": "LOWALT-016",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.5889796769115504
+  },
+  {
+   "item_id": "LOWALT-017",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.38875839730376566
+  },
+  {
+   "item_id": "LOWALT-018",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.5056701372008668
+  },
+  {
+   "item_id": "LOWALT-019",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.5418317033876753
+  },
+  {
+   "item_id": "LOWALT-020",
+   "variant": "guarded",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "answer_relevancy": 0.6025759049850711
+  }
+ ]
+}

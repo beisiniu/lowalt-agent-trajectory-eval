@@ -1,0 +1,184 @@
+{
+ "summary": {
+  "variant": "route_skip",
+  "mode": "strict",
+  "n": 20,
+  "n_fallback": 0,
+  "metrics": [
+   "answer_relevancy"
+  ],
+  "metrics_requested": [
+   "answer_relevancy"
+  ],
+  "overall": {
+   "n": 20,
+   "answer_relevancy": 0.3411
+  },
+  "by_group": {
+   "battery_low": {
+    "n": 4,
+    "answer_relevancy": 0.3834
+   },
+   "nfz_segment": {
+    "n": 2,
+    "answer_relevancy": 0.4161
+   },
+   "nfz_waypoint": {
+    "n": 6,
+    "answer_relevancy": 0.3787
+   },
+   "no_conflict": {
+    "n": 8,
+    "answer_relevancy": 0.2632
+   }
+  },
+  "config": {
+   "llm_base": "http://127.0.0.1:8081/v1",
+   "model": "",
+   "embed_base": "http://127.0.0.1:8082/v1",
+   "runs": "D:\\开源项目\\lowalt-agent-eval\\results\\trajectory_runs_llm.json"
+  }
+ },
+ "per_item": [
+  {
+   "item_id": "LOWALT-001",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.5281909902774341
+  },
+  {
+   "item_id": "LOWALT-002",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.32853855261796533
+  },
+  {
+   "item_id": "LOWALT-003",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.4591330911396691
+  },
+  {
+   "item_id": "LOWALT-004",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.3801986971829832
+  },
+  {
+   "item_id": "LOWALT-005",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-006",
+   "variant": "route_skip",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "answer_relevancy": 0.4552025386615548
+  },
+  {
+   "item_id": "LOWALT-007",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-008",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.531393125377288
+  },
+  {
+   "item_id": "LOWALT-009",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.5430176560195413
+  },
+  {
+   "item_id": "LOWALT-010",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-011",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.4985619876009342
+  },
+  {
+   "item_id": "LOWALT-012",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-013",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": null
+  },
+  {
+   "item_id": "LOWALT-014",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.35028525266571453
+  },
+  {
+   "item_id": "LOWALT-015",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.0
+  },
+  {
+   "item_id": "LOWALT-016",
+   "variant": "route_skip",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "answer_relevancy": 0.45449935762536336
+  },
+  {
+   "item_id": "LOWALT-017",
+   "variant": "route_skip",
+   "group": "battery_low",
+   "used_fallback": false,
+   "answer_relevancy": 0.34413864984502746
+  },
+  {
+   "item_id": "LOWALT-018",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.4387887641386791
+  },
+  {
+   "item_id": "LOWALT-019",
+   "variant": "route_skip",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "answer_relevancy": 0.7920379049255395
+  },
+  {
+   "item_id": "LOWALT-020",
+   "variant": "route_skip",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "answer_relevancy": 0.37696522157094225
+  }
+ ]
+}

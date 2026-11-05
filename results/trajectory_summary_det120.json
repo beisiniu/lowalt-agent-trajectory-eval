@@ -1,0 +1,327 @@
+{
+ "by_variant": {
+  "guarded": {
+   "n": 120,
+   "safety_pass_rate": 1.0,
+   "safety_ci95": [
+    0.969,
+    1.0
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 1.0,
+   "decision_acceptable_rate": 1.0,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.002
+  },
+  "route_skip": {
+   "n": 120,
+   "safety_pass_rate": 0.0,
+   "safety_ci95": [
+    0.0,
+    0.031
+   ],
+   "tool_consistency_mean": 0.2,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 0.3,
+   "decision_acceptable_rate": 0.3,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.0
+  },
+  "stale_context": {
+   "n": 120,
+   "safety_pass_rate": 0.3,
+   "safety_ci95": [
+    0.2253,
+    0.3872
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 0.3,
+   "decision_acceptable_rate": 0.3,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.003
+  },
+  "repeat_tool": {
+   "n": 120,
+   "safety_pass_rate": 1.0,
+   "safety_ci95": [
+    0.969,
+    1.0
+   ],
+   "tool_consistency_mean": 0.6775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 1.0,
+   "decision_acceptable_rate": 1.0,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.003
+  }
+ },
+ "by_variant_group": {
+  "guarded": {
+   "battery_low": {
+    "n": 24,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.862,
+     1.0
+    ],
+    "tool_consistency_mean": 0.9562,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.004
+   },
+   "nfz_segment": {
+    "n": 24,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.862,
+     1.0
+    ],
+    "tool_consistency_mean": 0.9875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.003
+   },
+   "nfz_waypoint": {
+    "n": 36,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.9036,
+     1.0
+    ],
+    "tool_consistency_mean": 0.9875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "no_conflict": {
+    "n": 36,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.9036,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   }
+  },
+  "route_skip": {
+   "battery_low": {
+    "n": 24,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.138
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "nfz_segment": {
+    "n": 24,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.138
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "nfz_waypoint": {
+    "n": 36,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.0964
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "no_conflict": {
+    "n": 36,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.0964
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   }
+  },
+  "stale_context": {
+   "battery_low": {
+    "n": 24,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.138
+    ],
+    "tool_consistency_mean": 0.9562,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.005
+   },
+   "nfz_segment": {
+    "n": 24,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.138
+    ],
+    "tool_consistency_mean": 0.9875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.004
+   },
+   "nfz_waypoint": {
+    "n": 36,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.0964
+    ],
+    "tool_consistency_mean": 0.9875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "no_conflict": {
+    "n": 36,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.9036,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   }
+  },
+  "repeat_tool": {
+   "battery_low": {
+    "n": 24,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.862,
+     1.0
+    ],
+    "tool_consistency_mean": 0.6562,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.007
+   },
+   "nfz_segment": {
+    "n": 24,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.862,
+     1.0
+    ],
+    "tool_consistency_mean": 0.6875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.004
+   },
+   "nfz_waypoint": {
+    "n": 36,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.9036,
+     1.0
+    ],
+    "tool_consistency_mean": 0.6875,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.002
+   },
+   "no_conflict": {
+    "n": 36,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.9036,
+     1.0
+    ],
+    "tool_consistency_mean": 0.675,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   }
+  }
+ },
+ "config": {
+  "evalset": "data/evalset/lowalt_eval_set_120.json",
+  "variants": [
+   "guarded",
+   "route_skip",
+   "stale_context",
+   "repeat_tool"
+  ],
+  "limit": 0,
+  "llm": false,
+  "max_tokens": 384,
+  "tag": "det120"
+ }
+}

@@ -1,0 +1,2 @@
+把 UAVBench_scenarios.zip 放在这里，或运行：
+  python tools/download_models.py --uavbench

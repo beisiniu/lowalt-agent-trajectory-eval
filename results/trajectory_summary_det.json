@@ -1,0 +1,327 @@
+{
+ "by_variant": {
+  "guarded": {
+   "n": 40,
+   "safety_pass_rate": 1.0,
+   "safety_ci95": [
+    0.9124,
+    1.0
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 1.0,
+   "decision_acceptable_rate": 1.0,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.002
+  },
+  "route_skip": {
+   "n": 40,
+   "safety_pass_rate": 0.0,
+   "safety_ci95": [
+    0.0,
+    0.0876
+   ],
+   "tool_consistency_mean": 0.2,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 0.3,
+   "decision_acceptable_rate": 0.3,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.0
+  },
+  "stale_context": {
+   "n": 40,
+   "safety_pass_rate": 0.3,
+   "safety_ci95": [
+    0.1807,
+    0.4543
+   ],
+   "tool_consistency_mean": 0.9775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 0.3,
+   "decision_acceptable_rate": 0.3,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.002
+  },
+  "repeat_tool": {
+   "n": 40,
+   "safety_pass_rate": 1.0,
+   "safety_ci95": [
+    0.9124,
+    1.0
+   ],
+   "tool_consistency_mean": 0.6775,
+   "grounding_mean": 1.0,
+   "decision_match_rate": 1.0,
+   "decision_acceptable_rate": 1.0,
+   "false_alarm_rate": 0.0,
+   "parse_ok_rate": 1.0,
+   "latency_mean_s": 0.002
+  }
+ },
+ "by_variant_group": {
+  "guarded": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 0.925,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.005
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.003
+   }
+  },
+  "route_skip": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.2425
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.2425
+    ],
+    "tool_consistency_mean": 0.2,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.0
+   }
+  },
+  "stale_context": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 0.925,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.005
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.3244
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.003
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 0.0,
+    "safety_ci95": [
+     0.0,
+     0.2425
+    ],
+    "tool_consistency_mean": 1.0,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 0.0,
+    "decision_acceptable_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.975,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.002
+   }
+  },
+  "repeat_tool": {
+   "battery_low": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 0.625,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.005
+   },
+   "nfz_segment": {
+    "n": 8,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.6756,
+     1.0
+    ],
+    "tool_consistency_mean": 0.7,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.003
+   },
+   "nfz_waypoint": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.7,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.001
+   },
+   "no_conflict": {
+    "n": 12,
+    "safety_pass_rate": 1.0,
+    "safety_ci95": [
+     0.7575,
+     1.0
+    ],
+    "tool_consistency_mean": 0.675,
+    "grounding_mean": 1.0,
+    "decision_match_rate": 1.0,
+    "decision_acceptable_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "parse_ok_rate": 1.0,
+    "latency_mean_s": 0.002
+   }
+  }
+ },
+ "config": {
+  "evalset": "D:\\开源项目\\lowalt-agent-eval\\data\\evalset\\lowalt_eval_set.json",
+  "variants": [
+   "guarded",
+   "route_skip",
+   "stale_context",
+   "repeat_tool"
+  ],
+  "limit": 0,
+  "llm": false,
+  "max_tokens": 384,
+  "tag": "det"
+ }
+}

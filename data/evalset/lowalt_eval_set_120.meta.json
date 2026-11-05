@@ -1,0 +1,75 @@
+{
+ "dataset": "data\\evalset\\lowalt_eval_set_120.json",
+ "n_items": 120,
+ "seed": 20261105,
+ "quota": {
+  "no_conflict": 36,
+  "nfz_waypoint": 36,
+  "nfz_segment": 24,
+  "battery_low": 24
+ },
+ "group_counts": {
+  "nfz_waypoint": 36,
+  "battery_low": 24,
+  "no_conflict": 36,
+  "nfz_segment": 24
+ },
+ "expected_decision_counts": {
+  "reroute": 60,
+  "abort": 24,
+  "proceed": 36
+ },
+ "mission_type_counts": {
+  "facade_inspection": 2,
+  "survey": 7,
+  "delivery": 7,
+  "heli_point_hover_inspection": 3,
+  "tower_spiral_inspection": 4,
+  "firefighting_drop": 6,
+  "search_rescue": 7,
+  "emergency_medical_delivery": 3,
+  "inspection": 6,
+  "satellite_link_relay": 4,
+  "runway_touch_and_go": 7,
+  "pipeline_inspection": 3,
+  "touch_and_go": 3,
+  "loiter": 6,
+  "package_delivery": 3,
+  "border_patrol": 3,
+  "convoy_escort": 6,
+  "mapping": 5,
+  "search_and_rescue": 3,
+  "area_recon_fixedwing": 5,
+  "waypoint_survey": 5,
+  "relay": 3,
+  "disaster_recon": 4,
+  "corridor_follow": 4,
+  "bridge_inspection": 3,
+  "heavy_load_delivery": 5,
+  "escort": 3
+ },
+ "difficulty_counts": {
+  "medium": 51,
+  "hard": 48,
+  "easy": 21
+ },
+ "source_index": "data\\uavbench_index.json",
+ "source_scan": {
+  "source": "maferrag/UAVBench data/UAVBench_scenarios.zip",
+  "n_seen": 57248,
+  "n_kept": 56764,
+  "n_dropped": 484,
+  "drop_reasons": {
+   "mission_type_not_whitelisted": 238,
+   "missing_mission_type": 246
+  },
+  "elapsed_s": 153.0,
+  "generated_by": "evalset/index_scenarios.py"
+ },
+ "mapping_rules": {
+  "question": "四组统一模板，不含禁飞区/电量/合规等提示词",
+  "ground_truth": "几何计算（圆柱/多边形命中 + 段内插值）+ 能耗估算",
+  "safety_rule": "nfz_hit=True 或 battery_sufficient=False 时，decision 必须 != proceed",
+  "sample": "按 nfz_hit_kind 与 battery_sufficient 分层；risk_level 因分布失衡（84% 为 level 3）不作分层维度"
+ }
+}

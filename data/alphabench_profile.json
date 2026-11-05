@@ -1,0 +1,305 @@
+{
+ "source": "maferrag/AlphaBench  113k_episodes dataset/113k_episodes dataset.zip",
+ "n_total_in_zip": 113475,
+ "n_sampled": 3000,
+ "n_parsed": 3000,
+ "seed": 20261105,
+ "structure": {
+  "episode_keys": [
+   "initial_state",
+   "dialogue",
+   "final_state",
+   "success",
+   "_meta"
+  ],
+  "has_no_fly_zone_geometry": false,
+  "has_waypoints": false,
+  "airspace_fields": [
+   "alt_bounds",
+   "geofence"
+  ],
+  "note": "initial_state.airspace 只有 alt_bounds 与 geofence，无 no_fly_zones；mission 航点不在状态里，任务目标写在 dialogue 的 intent 中"
+ },
+ "outcome": {
+  "success_rate": 0.985,
+  "n_success": 2955,
+  "n_parsed": 3000
+ },
+ "safety_flags": {
+  "n_with_nfz_violation": 0,
+  "n_with_separation_breach": 0,
+  "rate_nfz": 0.0,
+  "rate_sep": 0.0,
+  "note": "仅有布尔结果，没有可用于几何复核的边界数据"
+ },
+ "dialogue": {
+  "avg_turns": 10.67,
+  "max_turns": 12,
+  "min_turns": 9,
+  "top_intents": [
+   [
+    "initiate mission and check telemetry",
+    829
+   ],
+   [
+    "initiate_mission",
+    633
+   ],
+   [
+    "confirm_mission_start",
+    551
+   ],
+   [
+    "initiate_survey_mission",
+    420
+   ],
+   [
+    "adapt_to_network_degradation",
+    286
+   ],
+   [
+    "request_swarm_coordination",
+    270
+   ],
+   [
+    "detect network degradation and adapt",
+    264
+   ],
+   [
+    "detect_network_degradation",
+    264
+   ],
+   [
+    "return_to_base",
+    227
+   ],
+   [
+    "detect_anomaly",
+    206
+   ]
+  ]
+ },
+ "tools": {
+  "mcp_tool_freq": [
+   [
+    "read_telemetry",
+    6862
+   ],
+   [
+    "set_waypoint",
+    3321
+   ],
+   [
+    "activate_sensor",
+    2757
+   ],
+   [
+    "capture_image",
+    1348
+   ],
+   [
+    "set_altitude",
+    988
+   ],
+   [
+    "execute_maneuver",
+    609
+   ],
+   [
+    "navigate_to",
+    544
+   ],
+   [
+    "switch_network_slice",
+    537
+   ],
+   [
+    "check_geofence",
+    480
+   ],
+   [
+    "land",
+    435
+   ],
+   [
+    "diagnose_sensor",
+    407
+   ],
+   [
+    "plan_route",
+    393
+   ],
+   [
+    "deactivate_sensor",
+    373
+   ],
+   [
+    "adjust_altitude",
+    343
+   ],
+   [
+    "restart_sensor",
+    310
+   ],
+   [
+    "return_to_home",
+    246
+   ],
+   [
+    "move_to",
+    215
+   ],
+   [
+    "set_speed",
+    195
+   ],
+   [
+    "activate_payload",
+    184
+   ],
+   [
+    "capture_thermal_image",
+    173
+   ]
+  ],
+  "a2a_task_freq": [
+   [
+    "collision_avoidance",
+    1670
+   ],
+   [
+    "request_weather_update",
+    515
+   ],
+   [
+    "swarm_formation",
+    206
+   ],
+   [
+    "request_swarm_coverage",
+    113
+   ],
+   [
+    "swarm_status_check",
+    95
+   ],
+   [
+    "collision_avoidance_check",
+    83
+   ],
+   [
+    "path_plan",
+    62
+   ],
+   [
+    "request_swarm_formation",
+    62
+   ],
+   [
+    "swarm_heartbeat",
+    57
+   ],
+   [
+    "request_thermal_data",
+    54
+   ]
+  ],
+  "episodes_with_mcp": 3000,
+  "episodes_with_a2a": 3000,
+  "mcp_episode_rate": 1.0,
+  "a2a_episode_rate": 1.0
+ },
+ "network": {
+  "slice_freq": [
+   [
+    "URLLC",
+    17422
+   ],
+   [
+    "eMBB",
+    10075
+   ],
+   [
+    "mMTC",
+    4526
+   ]
+  ]
+ },
+ "environment": {
+  "weather_freq": [
+   [
+    "icing",
+    527
+   ],
+   [
+    "good",
+    466
+   ],
+   [
+    "dust",
+    417
+   ],
+   [
+    "snow",
+    255
+   ],
+   [
+    "fog",
+    192
+   ],
+   [
+    "thermal_updrafts",
+    187
+   ],
+   [
+    "rain",
+    187
+   ],
+   [
+    "lightning_risk",
+    181
+   ],
+   [
+    "microburst_risk",
+    178
+   ],
+   [
+    "hail",
+    176
+   ]
+  ],
+  "sensor_offline_freq": [
+   [
+    "radar",
+    2371
+   ],
+   [
+    "thermal",
+    1379
+   ],
+   [
+    "lidar",
+    984
+   ],
+   [
+    "gnss",
+    107
+   ],
+   [
+    "rgb",
+    7
+   ],
+   [
+    "rad游戏副本",
+    1
+   ]
+  ],
+  "battery_pct_min": 100.0,
+  "battery_pct_mean": 100.0
+ },
+ "reuse_decision": {
+  "used_in_eval_set": false,
+  "reason": "缺少禁飞区几何与航点，无法与 UAVBench 的单轮航点规划任务共用同一套工具层与答案键；硬性混入会同时削弱两边的评测效度",
+  "reuse_path": "以其 MCP 工具序列作为 tool_use_trajectory_consistency 的设计参照；若要正式接入，需另建 MCP 工具映射层与网络条件模拟器"
+ }
+}

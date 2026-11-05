@@ -1,0 +1,13 @@
+本项目使用或引用了以下第三方资源，其权利归各自所有者：
+
+- UAVBench 数据集  https://github.com/maferrag/UAVBench  (arXiv:2511.11252)
+- α³-Bench 数据集  https://github.com/maferrag/AlphaBench  (arXiv:2601.03281)
+- agent_evaluator  https://github.com/CaptainJi/agent_evaluator  (MIT)
+- Ragas            https://github.com/explodinggradients/ragas  (Apache-2.0)
+- LangGraph        https://github.com/langchain-ai/langgraph  (MIT)
+- llama.cpp        https://github.com/ggml-org/llama.cpp  (MIT)
+- Qwen2.5          https://github.com/QwenLM/Qwen2.5  (Qwen License)
+- bge-small-zh     https://huggingface.co/BAAI/bge-small-zh-v1.5  (MIT)
+
+vendor/agent_evaluator/ 为上游仓库副本，本项目对其有 4 处修改，
+详见 docs/upstream_changes.patch。

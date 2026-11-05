@@ -1,0 +1,50 @@
+# 低空 Agent 评测配置（agent_evaluator）
+#
+# 这份配置同时服务两件事：
+#   1. baseline —— 只跑通用 Ragas 指标（faithfulness / answer_relevancy）
+#   2. 二次开发版 —— 在通用指标之外，由 runner/run_trajectory_eval.py
+#      读取同一批 episode 的 LangGraph 轨迹，补上两个轨迹级维度
+#
+# 相对路径以项目根目录（lowalt-agent-eval/）为基准，
+# 适配器内部会按 vendor 目录上溯解析，不依赖当前工作目录。
+
+platform: langgraph
+
+api_config:
+  # 本地 llama.cpp 不校验 key，这里填占位值
+  api_key: "local-no-key"
+  base_url: "http://127.0.0.1:8081/v1"
+  timeout: 300
+
+  # ---- LangGraph 适配器专用字段（本项目新增）----
+  dataset_path: "data/evalset/lowalt_eval_set.json"
+  uavbench_zip: "data/raw/UAVBench_scenarios.zip"
+  # 被测 Agent 变体：guarded / route_skip / stale_context / repeat_tool
+  variant: "guarded"
+  use_llm: true
+  llm_base: "http://127.0.0.1:8081/v1"
+  llm_model: "qwen2.5-3b"
+  max_tokens: 384
+
+dataset: "data/evalset/lowalt_eval_set.json"
+
+# 通用指标（baseline）
+metrics:
+  - faithfulness
+  - answer_relevancy
+
+evaluator_llm:
+  provider: openai
+  model: "qwen2.5-3b"
+  api_key: "local-no-key"
+  base_url: "http://127.0.0.1:8081/v1"
+  timeout: 300
+  max_retries: 1
+
+output:
+  format: [console, json, html, csv]
+  save_path: "results/agent_evaluator"
+
+log:
+  level: INFO
+  format: simple

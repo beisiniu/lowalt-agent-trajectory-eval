@@ -1,0 +1,125 @@
+{
+ "summary": {
+  "variant": "guarded",
+  "mode": "strict",
+  "n": 12,
+  "n_fallback": 0,
+  "metrics": [
+   "faithfulness"
+  ],
+  "overall": {
+   "n": 12,
+   "faithfulness": 0.2183
+  },
+  "by_group": {
+   "battery_low": {
+    "n": 2,
+    "faithfulness": 0.0
+   },
+   "nfz_segment": {
+    "n": 1,
+    "faithfulness": 0.5
+   },
+   "nfz_waypoint": {
+    "n": 3,
+    "faithfulness": 0.3333
+   },
+   "no_conflict": {
+    "n": 6,
+    "faithfulness": 0.225
+   }
+  },
+  "config": {
+   "llm_base": "http://127.0.0.1:8081/v1",
+   "model": "",
+   "embed_base": "",
+   "runs": "D:\\开源项目\\lowalt-agent-eval\\results\\trajectory_runs_llm.json"
+  }
+ },
+ "per_item": [
+  {
+   "item_id": "LOWALT-001",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.25
+  },
+  {
+   "item_id": "LOWALT-002",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.6
+  },
+  {
+   "item_id": "LOWALT-003",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-004",
+   "variant": "guarded",
+   "group": "battery_low",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-005",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-006",
+   "variant": "guarded",
+   "group": "nfz_segment",
+   "used_fallback": false,
+   "faithfulness": 0.5
+  },
+  {
+   "item_id": "LOWALT-007",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-008",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.5
+  },
+  {
+   "item_id": "LOWALT-009",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": 0.3333333333333333
+  },
+  {
+   "item_id": "LOWALT-010",
+   "variant": "guarded",
+   "group": "no_conflict",
+   "used_fallback": false,
+   "faithfulness": 0.0
+  },
+  {
+   "item_id": "LOWALT-011",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": null
+  },
+  {
+   "item_id": "LOWALT-012",
+   "variant": "guarded",
+   "group": "nfz_waypoint",
+   "used_fallback": false,
+   "faithfulness": null
+  }
+ ]
+}
